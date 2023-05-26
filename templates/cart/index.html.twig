@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart index{% endblock %}
+
+{% block body %}
+    <h1>Mon Panier</h1>
+
+    {# {{dump(cart)}} #}
+    {% set total = null %}
+    {% for item in cart %}
+    {% set total = total + (item.configurator.totalprice * item.quantity) %}
+        {% for item in item.configurator.product %}
+            <h4> {{ item.title }} </h4>
+            <h4> {{ item.price }} </h4>
+        {% endfor %}
+        <h4>{{item.quantity}}</h4>
+        <h4> {{ item.configurator.totalprice * item.quantity }} </h4>
+        <a href="{{ path('app_cart_remove', {id: item.configurator.id}) }}">Supprimer</a>
+    {% endfor %}
+    
+    <h1>Total : {{ total }}</h1>
+
+    <a href="{{ path('app_cart_removeAll') }}">Vider mon panier</a>
+    <a href="{{ path('app_cart_new') }}">Valider mon panier</a>
+    <a href="{{ path('app_configurator_new') }}">Ajouter une nouvelle configuration</a>
+{% endblock %}

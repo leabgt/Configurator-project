@@ -1,0 +1,7 @@
+@import "home/home.css"; 
+@import "container.css"; 
+@import "header.css"; 
+
+.body {
+    font-family: sans-serif;
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Configurator{% endblock %}
+
+{% block body %}
+    <h1>Create new Configurator</h1>
+
+    {{ include('configurator/_form.html.twig') }}
+
+    <a href="{{ path('app_configurator_index') }}">back to list</a>
+{% endblock %}

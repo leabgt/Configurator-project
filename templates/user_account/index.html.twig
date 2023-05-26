@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserAccountController!{% endblock %}
+
+{% block body %}
+
+<div class="custom-container">
+    <div class="custom-content">
+        <div><a href="{{ path('app_account_cart_index') }}">Mes commandes</a></div>
+        <div><a href="{{ path('app_wallet_index') }}">Ma cagnotte</a></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Configurator{% endblock %}
+
+{% block body %}
+    <h1>Edit Configurator</h1>
+
+    {{ include('configurator/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_configurator_index') }}">back to list</a>
+
+    {{ include('configurator/_delete_form.html.twig') }}
+{% endblock %}

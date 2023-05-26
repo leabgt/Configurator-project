@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart index{% endblock %}
+
+{% block body %}
+    <h1>Cart index</h1>
+    {% for cart in carts %}
+        <div>{{ cart.id }}</div>
+        <div>{{ cart.date|date('Y-m-d H:i:s') }}</div>
+    {% endfor %}
+{% endblock %}

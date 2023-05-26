@@ -1,0 +1,13 @@
+.home {
+    display: flex; 
+    justify-content: center;
+}
+
+.home a {
+    text-decoration: none; 
+    margin: 0 auto; 
+    color: #3c5066 ; 
+    border: solid 1px #3c5066 ;
+    padding : 20px; 
+    border-radius: 5px; 
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="custom-container">
+    <div class="custom-content">
+        <ul>
+            <li><a href="{{ path('app_product_index') }}">Produits</a></li>
+            <li><a href="{{ path('app_admin_user_index') }}">Utilisateurs</a></li>
+            <li><a href="{{ path('app_admin_cart_index') }}">Commandes</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

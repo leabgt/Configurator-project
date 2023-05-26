@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Configurator{% endblock %}
+
+{% block body %}
+    <h1>Configurator</h1>
+
+    {% for product in products %}
+        <div> {{ product.title }} </div>
+    {% endfor %}
+
+    <table class="table">
+        <tbody>
+            {# <tr>
+                <th>Id</th>
+                <td>{{ configurator.id }}</td>
+            </tr> #}
+            <tr>
+                <th>TotalPrice</th>
+                <td>{{ configurator.totalPrice }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_configurator_edit', {'id': configurator.id}) }}">Modifier ma configuration</a>
+
+    <a href="{{ path('app_cart_add', {'id': configurator.id}) }}">Ajouter au panier</a>
+
+{% endblock %}

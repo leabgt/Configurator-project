@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart index{% endblock %}
+
+{% block body %}
+    <h1>Commandes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th>Date</th>
+                <th>Utilisateur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cart in carts %}
+            <tr>
+                {# <td>{{ cart.id }}</td> #}
+                <td>{{ cart.date ? cart.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cart.user.email }} {{ cart.user.firstName }} {{ cart.user.lastName }}</td>
+                <td>
+                    <a href="{{ path('app_admin_cart_show', {'id': cart.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
